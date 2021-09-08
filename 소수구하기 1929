@@ -1,0 +1,25 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+long long int d[1000000] = { 0,1 };
+int main()
+{
+   
+	int n = 0, m = 0;
+	cin >> m >> n;
+	for (int i = 2; i <= n; i++)
+	{
+		if (i * i > 1000001)
+			break;
+		for (int j = i * i; j <= n; j = j + i)
+		{
+			d[j] = 1;
+		}
+	}
+	for (int i = m; i <= n; i++)
+	{
+		if (d[i] == 0)
+			cout << i << "\n";
+	}
+}
