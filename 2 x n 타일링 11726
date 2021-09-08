@@ -1,0 +1,26 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int d[1000002];
+
+int tail(int n) {
+	if (d[n] != 0)
+		return d[n];
+
+	if (n == 1)
+		return 1;
+	if (n == 2)
+		return 2;
+	
+	d[n] = tail(n - 1) + tail(n - 2);
+	return d[n];
+}
+
+int main()
+{
+	int n = 0;
+	cin >> n;
+	
+	cout << tail(n)<<"\n";
+}
