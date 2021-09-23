@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int var1(int n)
+{
+	int count = 0;
+	count = n / 5;
+	count += n / 25;
+	count += n / 125;
+	return count;
+}
+int var2(int n)
+{
+	int count = 0;
+	while (n > 0)
+	{
+		count += n / 5;
+		n /= 5;
+	}
+	return count;
+}
+
+int main()
+{
+	int n = 0;
+	cin >> n;
+	cout << var1(n) << "\n";
+	cout << var2(n) << "\n";
+}
