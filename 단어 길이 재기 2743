@@ -1,0 +1,13 @@
+#include <iostream>
+#include <cstring>
+#include <stack>
+using namespace std;
+
+int main()
+{
+	char* a = (char*)malloc(sizeof(char) * 101);
+	if (a == NULL)return 0;
+	cin >> a;
+	int len = strlen(a);
+	cout << len << "\n";
+}
